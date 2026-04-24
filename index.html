@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Murang'a Sokoni – Marketplace for Murang'a County</title>
+  <link rel="stylesheet" href="css/main.css" />
+</head>
+<body>
+  <!-- Sticky search bar -->
+  <div class="search-bar">
+    <input
+      type="text"
+      placeholder="Search for products, sellers, or locations in Murang'a..."
+    />
+    <select>
+      <option value="">All Categories</option>
+      <option value="food">Food & Farming</option>
+      <option value="clothes">Clothes & Fashion</option>
+      <option value="building">Building & Construction Materials</option>
+      <option value="electronics">Electronics & Appliances</option>
+      <option value="services">Services</option>
+      <option value="others">Others</option>
+    </select>
+    <select>
+      <option value="">All Locations</option>
+      <option value="kigumo">Kigumo</option>
+      <option value="maragua">Maragua</option>
+      <option value="murangatown">Murang'a Town</option>
+      <option value="gatanga">Gatanga</option>
+      <option value="kandara">Kandara</option>
+    </select>
+    <button id="search-btn" class="search-btn">Search</button>
+  </div>
+
+  <!-- Hero (Swahili name only) -->
+  <section class="hero">
+    <h1 class="hero-brand">Murang'a Sokoni</h1>
+    <p class="hero-tagline">
+      Marketplace for all buyers and sellers in Murang'a County
+    </p>
+    <a href="#" class="btn btn-primary">Join as a Seller</a>
+    <a href="#" class="btn btn-secondary">Browse Listings</a>
+  </section>
+
+  <!-- Value props -->
+  <section class="value-props">
+    <div class="value-card">
+      <h3>Reach the whole Murang'a County</h3>
+      <p>Connect sellers from Kigumo, Maragua, Murang'a town, Gatanga, Kandara and more with buyers across the county.</p>
+    </div>
+    <div class="value-card">
+      <h3>Easy M‑Pesa or cash payment</h3>
+      <p>Buyers pay directly to sellers either via M‑Pesa or cash on delivery. We never hold your money.</p>
+    </div>
+    <div class="value-card">
+      <h3>Clear, small fees only when you sell</h3>
+      <p>We take a small, transparent fee from sellers only, based on our commission bands (see below).</p>
+    </div>
+    <div class="value-card">
+      <h3>Trusted, local, and safe</h3>
+      <p>Report scams or suspicious listings. We review and act so Murang'a Sokoni stays safe for everyone.</p>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="how-it-works">
+    <h2>How Murang'a Sokoni Works</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-icon">+</div>
+        <h3>Join as a seller</h3>
+        <p>Create an account, add your phone, town, and ID details, then start listing your products.</p>
+      </div>
+      <div class="step">
+        <div class="step-icon">📸</div>
+        <h3>Add your listings</h3>
+        <p>Upload photos, set a price, and choose a category (e.g., Food, Clothes, Building Materials, Services).</p>
+      </div>
+      <div class="step">
+        <div class="step-icon">🔍</div>
+        <h3>Buyers find you</h3>
+        <p>Buyers in Kigumo, Maragua, Murang'a town, Gatanga, and beyond search by category, price, and location.</p>
+      </div>
+      <div class="step">
+        <div class="step-icon">📱</div>
+        <h3>Pay & deliver safely</h3>
+        <p>Buyers pay via M‑Pesa or cash on delivery. After delivery, both parties rate each other.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories -->
+  <section class="categories">
+    <h2>Shop by Category</h2>
+    <div class="category-grid">
+      <div class="category-card">Food & Farming</div>
+      <div class="category-card">Clothes & Fashion</div>
+      <div class="category-card">Building & Construction Materials</div>
+      <div class="category-card">Electronics & Appliances</div>
+      <div class="category-card">Services</div>
+      <div class="category-card">Others</div>
+    </div>
+  </section>
+
+  <!-- Popular listings -->
+  <section class="popular-listings">
+    <h2>Popular Listings in Murang'a County</h2>
+    <div class="listings-grid">
+      <a href="#" class="listing-card">
+        <div class="listing-img">🌽</div>
+        <div class="listing-body">
+          <div class="listing-title">Fresh maize from Kigumo farm</div>
+          <div class="listing-price">KSh 500 per sack</div>
+          <div class="listing-location">Kigumo, Murang'a</div>
+        </div>
+      </a>
+
+      <a href="#" class="listing-card">
+        <div class="listing-img">Laptop</div>
+        <div class="listing-body">
+          <div class="listing-title">Used laptop for sale</div>
+          <div class="listing-price">KSh 12,000</div>
+          <div class="listing-location">Murang'a Town</div>
+        </div>
+      </a>
+
+      <a href="#" class="listing-card">
+        <div class="listing-img">🏗️</div>
+        <div class="listing-body">
+          <div class="listing-title">Cement & sand for construction</div>
+          <div class="listing-price">KSh 1,200 per bag</div>
+          <div class="listing-location">Maragua, Murang'a</div>
+        </div>
+      </a>
+
+      <a href="#" class="listing-card">
+        <div class="listing-img">✂️</div>
+        <div class="listing-body">
+          <div class="listing-title">Tailoring & hair‑dressing services</div>
+          <div class="listing-price">KSh 300 per item</div>
+          <div class="listing-location">Gatanga, Murang'a</div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- Commission bands -->
+  <section class="commission">
+    <h2>Our Seller Commission Bands</h2>
+    <p>
+      We only take a small fee from sellers when an item sells. The buyer always pays the exact listed price.
+    </p>
+    <table>
+      <tr>
+        <th>Sale amount range</th>
+        <th>Our fee</th>
+      </tr>
+      <tr>
+        <td>KSh 100 – 500</td>
+        <td>KSh 20</td>
+      </tr>
+      <tr>
+        <td>KSh 501 – 1,000</td>
+        <td>KSh 30</td>
+      </tr>
+      <tr>
+        <td>KSh 1,001 – 1,500</td>
+        <td>KSh 40</td>
+      </tr>
+      <tr>
+        <td>KSh 1,501 – 2,000</td>
+        <td>KSh 50</td>
+      </tr>
+      <tr>
+        <td>KSh 2,001 – 2,500</td>
+        <td>KSh 60</td>
+      </tr>
+      <tr>
+        <td>KSh 2,501 – 3,000</td>
+        <td>KSh 70</td>
+      </tr>
+      <tr>
+        <td>KSh 3,001 – 3,500</td>
+        <td>KSh 80</td>
+      </tr>
+      <tr>
+        <td>KSh 3,501 – 4,000</td>
+        <td>KSh 90</td>
+      </tr>
+      <tr>
+        <td>KSh 4,001 – 4,500</td>
+        <td>KSh 100</td>
+      </tr>
+      <tr>
+        <td>KSh 4,501 – 5,000</td>
+        <td>KSh 110</td>
+      </tr>
+    </table>
+  </section>
+
+  <!-- Trust & safety -->
+  <section class="trust">
+    <h2>Safe, Transparent, and Local</h2>
+    <p>
+      Murang'a Sokoni is built to be safe and easy to use for everyone in Murang'a County.
+    </p>
+    <p>
+      - Buyers pay only the listed price on the product page (no hidden extra charges).<br>
+      - We take a small, clear fee from sellers only, as shown in the commission table above.<br>
+      - Any user can report a suspected scam or fake listing via the “Report” button on each listing.<br>
+      - Verified sellers are shown with a badge so you know who to trust.
+    </p>
+  </section>
+
+  <!-- Seller CTA -->
+  <section class="seller-cta">
+    <h2>Ready to start selling in Murang'a?</h2>
+    <p>
+      Join thousands of local sellers across Kigumo, Maragua, Murang'a town, Gatanga, Kandara and more.
+    </p>
+    <p>
+      Registration is free. We only take a small fee when you make a sale.
+    </p>
+    <a href="#" class="btn btn-primary">Register as a Seller Now</a>
+  </section>
+
+  <!-- Listings scroll wall -->
+  <section class="listings-scroll">
+    <h2>All Listings in Murang'a County</h2>
+    <div class="listing-small-card">
+      <div class="listing-small-img">🛒</div>
+      <div class="listing-small-info">
+        <h4>Fresh bananas from Kigumo farm</h4>
+        <div class="listing-small-price">KSh 120 per kilo</div>
+        <div class="listing-small-location">Kigumo, Murang'a</div>
+      </div>
+    </div>
+
+    <div class="listing-small-card">
+      <div class="listing-small-img">Laptop</div>
+      <div class="listing-small-info">
+        <h4>Refurbished laptop for sale</h4>
+        <div class="listing-small-price">KSh 10,500</div>
+        <div class="listing-small-location">Murang'a Town, Murang'a</div>
+      </div>
+    </div>
+
+    <div class="listing-small-card">
+      <div class="listing-small-img">🏗️</div>
+      <div class="listing-small-info">
+        <h4>PVC water pipes – 100 meters</h4>
+        <div class="listing-small-price">KSh 8,000</div>
+        <div class="listing-small-location">Maragua, Murang'a</div>
+      </div>
+    </div>
+
+    <div class="listing-small-card">
+      <div class="listing-small-img">✂️</div>
+      <div class="listing-small-info">
+        <h4>Hair‑dressing & salon services</h4>
+        <div class="listing-small-price">KSh 250 per service</div>
+        <div class="listing-small-location">Gatanga, Murang'a</div>
+      </div>
+    </div>
+
+    <div class="listing-small-card">
+      <div class="listing-small-img">Clothes</div>
+      <div class="listing-small-info">
+        <h4>Used school uniforms bundle</h4>
+        <div class="listing-small-price">KSh 1,200 for bundle</div>
+        <div class="listing-small-location">Kandara, Murang'a</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>
+      © 2026 <strong>Murang'a Sokoni</strong> – Marketplace for all buyers and sellers in Murang'a County.
+    </p>
+    <p>
+      <a href="#">Home</a> |
+      <a href="#">Categories</a> |
+      <a href="#">Commission Bands</a> |
+      <a href="#">Terms for Sellers</a> |
+      <a href="#">Contact Us</a>
+    </p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
