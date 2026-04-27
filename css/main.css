@@ -107,3 +107,107 @@ body {
   box-shadow: 0 4px 14px rgba(79, 70, 229, 0.28);
 }
 
+/* --- New Form Styles --- */
+
+.form-header {
+  background: linear-gradient(135deg, var(--brand-primary), #7C3AED);
+  color: white;
+  padding: 1.5rem;
+  text-align: center;
+  position: relative;
+}
+
+.back-link {
+  color: white;
+  text-decoration: none;
+  font-size: 0.9rem;
+  position: absolute;
+  left: 1rem;
+  top: 1.8rem;
+}
+
+.form-container {
+  padding: 2rem 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.form-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  width: 100%;
+  max-width: 450px;
+}
+
+.form-card h2 {
+  margin-bottom: 0.5rem;
+  color: var(--brand-primary);
+}
+
+.form-card p {
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+  color: #6B7280;
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  font-size: 0.9rem;
+}
+
+.form-group input, 
+.form-group select, 
+.form-group textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+}
+
+.form-group input:focus {
+  border-color: var(--brand-primary);
+}
+
+.image-upload-box {
+  border: 2px dashed var(--border);
+  border-radius: 8px;
+  padding: 2rem;
+  text-align: center;
+  cursor: pointer;
+  color: #9CA3AF;
+  transition: all 0.3s;
+}
+
+.image-upload-box:hover {
+  border-color: var(--brand-accent);
+  color: var(--brand-accent);
+}
+
+.btn-block {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.form-footer {
+  text-align: center;
+  margin-top: 1.5rem !important;
+}
+
+.form-footer a {
+  color: var(--brand-primary);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+
