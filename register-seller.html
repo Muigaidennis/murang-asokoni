@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register as a Seller – Murang'a Sokoni</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <!-- Simple Header -->
+  <header class="form-header">
+    <a href="index.html" class="back-link">← Back to Home</a>
+    <h1>Murang'a Sokoni</h1>
+  </header>
+
+  <section class="form-container">
+    <div class="form-card">
+      <h2>Create Seller Account</h2>
+      <p>Join thousands of local sellers in Murang'a County.</p>
+      
+      <form id="register-form">
+        <div class="form-group">
+          <label for="seller-name">Full Name / Business Name</label>
+          <input type="text" id="seller-name" placeholder="e.g., Jane Wambui / Wambui's Farm" required>
+        </div>
+
+        <div class="form-group">
+          <label for="phone">M-Pesa Phone Number</label>
+          <input type="tel" id="phone" placeholder="e.g., 0712345678" required>
+          <small>This is where buyers will contact you.</small>
+        </div>
+
+        <div class="form-group">
+          <label for="location">Your Primary Location</label>
+          <select id="location" required>
+            <option value="">Select Location</option>
+            <option value="kigumo">Kigumo</option>
+            <option value="maragua">Maragua</option>
+            <option value="murangatown">Murang'a Town</option>
+            <option value="gatanga">Gatanga</option>
+            <option value="kandara">Kandara</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Create Password</label>
+          <input type="password" id="password" placeholder="At least 6 characters" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">Register as Seller</button>
+      </form>
+      
+      <p class="form-footer">Already have an account? <a href="#">Login here</a></p>
+    </div>
+  </section>
+</body>
+</html>
+
