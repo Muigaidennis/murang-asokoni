@@ -57,6 +57,26 @@
       </form>
     </div>
   </section>
+  <script>
+  const imageInput = document.getElementById('image-input');
+  const uploadBox = document.querySelector('.image-upload-box');
+
+  // Trigger file input when clicking the box
+  uploadBox.addEventListener('click', () => imageInput.click());
+
+  // Show preview when a file is selected
+  imageInput.addEventListener('change', function() {
+    const file = this.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        uploadBox.innerHTML = `<img src="${e.target.result}" style="max-width:100%; border-radius:8px;">`;
+        uploadBox.style.padding = "0";
+      }
+      reader.readAsDataURL(file);
+    }
+  });
+</script>
 </body>
 </html>
 
