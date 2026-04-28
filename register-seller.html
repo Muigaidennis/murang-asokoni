@@ -18,7 +18,7 @@
       <h2>Create Seller Account</h2>
       <p>Join thousands of local sellers in Murang'a County.</p>
       
-      <form id="register-form">
+     <form id="register-form" onsubmit="window.location.href='dashboard.html'; return false;">
         <div class="form-group">
           <label for="seller-name">Full Name / Business Name</label>
           <input type="text" id="seller-name" placeholder="e.g., Jane Wambui / Wambui's Farm" required>
@@ -39,6 +39,8 @@
             <option value="murangatown">Murang'a Town</option>
             <option value="gatanga">Gatanga</option>
             <option value="kandara">Kandara</option>
+            <option value="kiharu">Kiharu</option>
+            <option value="kangema">Kangema</option>
           </select>
         </div>
 
@@ -50,7 +52,7 @@
         <button type="submit" class="btn btn-primary btn-block">Register as Seller</button>
       </form>
       
-      <p class="form-footer">Already have an account? <a href="#">Login here</a></p>
+     <p class="form-footer">Already have an account? <a href="dashboard.html">Login here</a></p>
     </div>
   </section>
 </body>
