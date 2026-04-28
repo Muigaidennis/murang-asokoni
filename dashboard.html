@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seller Dashboard – Murang'a Sokoni</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <header class="form-header">
+    <a href="index.html" class="back-link">← Logout</a>
+    <h1>Seller Dashboard</h1>
+  </header>
+
+  <section class="dashboard-stats">
+    <div class="stat-card">
+      <h3>3</h3>
+      <p>Active Listings</p>
+    </div>
+    <div class="stat-card">
+      <h3>124</h3>
+      <p>Total Views</p>
+    </div>
+  </section>
+
+  <section class="form-container" style="padding-top: 0;">
+    <div class="form-card" style="max-width: 800px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+        <h2 style="margin-bottom: 0;">Your Listings</h2>
+        <a href="add-listing.html" class="btn btn-primary">+ Add New</a>
+      </div>
+
+      <div class="dashboard-listings">
+        <!-- Example of an active listing -->
+        <div class="dashboard-item">
+          <div class="item-info">
+            <strong>Fresh Maize (50kg)</strong>
+            <span>KSh 1,200 • Kigumo</span>
+          </div>
+          <div class="item-actions">
+            <button class="btn-small">Edit</button>
+            <button class="btn-small btn-danger">Delete</button>
+          </div>
+        </div>
+        
+        <div class="dashboard-item">
+          <div class="item-info">
+            <strong>Used School Uniforms</strong>
+            <span>KSh 800 • Maragua</span>
+          </div>
+          <div class="item-actions">
+            <button class="btn-small">Edit</button>
+            <button class="btn-small btn-danger">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
+
