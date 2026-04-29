@@ -1,7 +1,7 @@
 // js/auth.js
 
 // 1. REPLACE THESE WITH YOUR ACTUAL KEYS FROM SUPABASE SETTINGS > API
-const SUPABASE_URL = 'https://your-project-url.supabase.co';
+const SUPABASE_URL = 'https://zesuaxyftsmsnhkzfkkp.supabase.co';
 const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inplc3VheHlmdHNtc25oa3pma2twIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzczOTUyMDgsImV4cCI6MjA5Mjk3MTIwOH0.9zqxjQy5y68fbwkY0V7UOyWIs07VJf6huO5ov7rygH4';
 
 // 2. Initialize the Supabase Client
