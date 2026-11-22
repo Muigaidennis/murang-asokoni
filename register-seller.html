@@ -1,60 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en-KE">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Register as a Seller – Murang'a Sokoni</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f68b1e">
+  <title>Join Murang’a Sokoni</title>
   <link rel="stylesheet" href="css/main.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script defer src="js/auth.js"></script>
+  <script defer src="js/auth-page.js"></script>
 </head>
-<body>
-  <!-- Simple Header -->
-  <header class="form-header">
-    <a href="index.html" class="back-link">← Back to Home</a>
-    <h1>Murang'a Sokoni</h1>
-  </header>
-
-  <section class="form-container">
-    <div class="form-card">
-      <h2>Create Seller Account</h2>
-      <p>Join thousands of local sellers in Murang'a County.</p>
-      
-     <form id="register-form" onsubmit="window.location.href='dashboard.html'; return false;">
-        <div class="form-group">
-          <label for="seller-name">Full Name / Business Name</label>
-          <input type="text" id="seller-name" placeholder="e.g., Jane Wambui / Wambui's Farm" required>
-        </div>
-
-        <div class="form-group">
-          <label for="phone">M-Pesa Phone Number</label>
-          <input type="tel" id="phone" placeholder="e.g., 0712345678" required>
-          <small>This is where buyers will contact you.</small>
-        </div>
-
-        <div class="form-group">
-          <label for="location">Your Primary Location</label>
-          <select id="location" required>
-            <option value="">Select Location</option>
-            <option value="kigumo">Kigumo</option>
-            <option value="maragua">Maragua</option>
-            <option value="murangatown">Murang'a Town</option>
-            <option value="gatanga">Gatanga</option>
-            <option value="kandara">Kandara</option>
-            <option value="kiharu">Kiharu</option>
-            <option value="kangema">Kangema</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label for="password">Create Password</label>
-          <input type="password" id="password" placeholder="At least 6 characters" required>
-        </div>
-
-        <button type="submit" class="btn btn-primary btn-block">Register as Seller</button>
+<body class="form-page">
+  <header class="form-header"><a href="index.html" class="back-link">← Back to marketplace</a><a class="wordmark form-wordmark" href="index.html"><span class="brand-mark">M</span><span>murang’a<span class="wordmark-accent">sokoni</span></span></a></header>
+  <main class="form-container auth-layout">
+    <aside class="auth-aside"><p class="eyebrow">LOCAL COMMERCE, MADE EASY</p><h1>Murang’a shops here.</h1><p>Join buyers and sellers across the county. Create an account to list your products and manage your local business.</p><div class="county-pills"><span>Kigumo</span><span>Kandara</span><span>Maragua</span><span>Gatanga</span><span>Kiharu</span><span>Kangema</span></div></aside>
+    <section class="form-card auth-card" aria-labelledby="auth-title">
+      <p class="eyebrow">YOUR LOCAL MARKETPLACE</p><h2 id="auth-title">Create your seller account</h2><p id="auth-description">Set up your account and start reaching customers around Murang’a.</p>
+      <div class="auth-tabs" role="tablist" aria-label="Account action"><button id="signup-tab" type="button" role="tab">Create account</button><button id="login-tab" type="button" role="tab">Log in</button></div>
+      <form id="auth-form" novalidate>
+        <div id="name-group" class="form-group"><label for="seller-name">Your name or business name</label><input type="text" id="seller-name" name="name" autocomplete="name" placeholder="e.g. Wambui’s Farm" maxlength="100" required></div>
+        <div class="form-group"><label for="phone">Mobile number</label><input type="tel" id="phone" name="phone" inputmode="tel" autocomplete="tel" placeholder="0712 345 678" required><small>Use a Kenyan number beginning with 07, 01, or +254.</small></div>
+        <div id="location-group" class="form-group"><label for="location">Where is your business?</label><select id="location" name="location" required><option value="">Choose your area</option><option value="kigumo">Kigumo</option><option value="maragua">Maragua</option><option value="murangatown">Murang’a Town</option><option value="gatanga">Gatanga</option><option value="kandara">Kandara</option><option value="kiharu">Kiharu</option><option value="kangema">Kangema</option></select></div>
+        <div class="form-group"><label for="password">Password</label><input type="password" id="password" name="password" autocomplete="new-password" minlength="8" placeholder="At least 8 characters" required></div>
+        <div id="otp-group" class="form-group" hidden><label for="otp">SMS verification code</label><input type="text" id="otp" name="otp" inputmode="numeric" autocomplete="one-time-code" pattern="[0-9]{6}" maxlength="6" placeholder="Enter your 6-digit code"><small>Enter the code sent to your phone.</small></div>
+        <p id="auth-message" class="notice" role="status" aria-live="polite" hidden></p>
+        <button id="auth-submit" type="submit" class="btn btn-primary btn-block">Create seller account</button>
       </form>
-      
-     <p class="form-footer">Already have an account? <a href="dashboard.html">Login here</a></p>
-    </div>
-  </section>
+      <p class="auth-terms">By joining, you agree to use Murang’a Sokoni respectfully and keep your listings accurate.</p>
+    </section>
+  </main>
 </body>
 </html>
-

@@ -1,61 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en-KE">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Seller Dashboard – Murang'a Sokoni</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f68b1e">
+  <title>My seller dashboard | Murang’a Sokoni</title>
   <link rel="stylesheet" href="css/main.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script defer src="js/auth.js"></script>
+  <script defer src="js/dashboard.js"></script>
 </head>
-<body>
-  <header class="form-header">
-    <a href="index.html" class="back-link">← Logout</a>
-    <h1>Seller Dashboard</h1>
-  </header>
-
-  <section class="dashboard-stats">
-    <div class="stat-card">
-      <h3>3</h3>
-      <p>Active Listings</p>
-    </div>
-    <div class="stat-card">
-      <h3>124</h3>
-      <p>Total Views</p>
-    </div>
-  </section>
-
-  <section class="form-container" style="padding-top: 0;">
-    <div class="form-card" style="max-width: 800px;">
-      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
-        <h2 style="margin-bottom: 0;">Your Listings</h2>
-        <a href="add-listing.html" class="btn btn-primary">+ Add New</a>
-      </div>
-
-      <div class="dashboard-listings">
-        <!-- Example of an active listing -->
-        <div class="dashboard-item">
-          <div class="item-info">
-            <strong>Fresh Maize (50kg)</strong>
-            <span>KSh 1,200 • Kigumo</span>
-          </div>
-          <div class="item-actions">
-            <button class="btn-small">Edit</button>
-            <button class="btn-small btn-danger">Delete</button>
-          </div>
-        </div>
-        
-        <div class="dashboard-item">
-          <div class="item-info">
-            <strong>Used School Uniforms</strong>
-            <span>KSh 800 • Maragua</span>
-          </div>
-          <div class="item-actions">
-            <button class="btn-small">Edit</button>
-            <button class="btn-small btn-danger">Delete</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+<body class="form-page">
+  <header class="form-header dashboard-header"><a class="wordmark form-wordmark" href="index.html"><span class="brand-mark">M</span><span>murang’a<span class="wordmark-accent">sokoni</span></span></a><div class="dashboard-header-actions"><a href="index.html">Visit marketplace</a><button id="logout-button" type="button" class="btn-small">Log out</button></div></header>
+  <main class="dashboard-main">
+    <section class="dashboard-welcome"><div><p class="eyebrow">SELLER SPACE</p><h1 id="seller-greeting">Your shop, your way.</h1><p>Manage your listings and keep your local customers up to date.</p></div><a href="add-listing.html" class="seller-cta">＋ Post a product</a></section>
+    <section class="dashboard-stats" aria-label="Listing statistics"><article class="stat-card"><span class="stat-icon">🛍️</span><h2 id="active-count">—</h2><p>Active listings</p></article><article class="stat-card"><span class="stat-icon">📍</span><h2>Murang’a</h2><p>Your local marketplace</p></article></section>
+    <section class="dashboard-panel"><div class="section-heading"><div><p class="eyebrow">YOUR SHOP</p><h2>Your listings</h2><p class="section-subtitle">Edit or remove products whenever you need.</p></div></div><p id="dashboard-message" class="notice" aria-live="polite" hidden></p><div id="seller-listings" class="seller-listings"></div><div id="dashboard-empty" class="empty-state" hidden>You haven’t listed anything yet. Post your first product to show Murang’a what you sell.<br><a class="seller-cta" href="add-listing.html">Post your first product</a></div></section>
+  </main>
+  <footer class="site-footer"><p>Local finds. Local people. One Murang’a.</p><p><a href="index.html">Back to marketplace</a></p></footer>
 </body>
 </html>
-

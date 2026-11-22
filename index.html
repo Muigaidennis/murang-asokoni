@@ -1,110 +1,58 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en-KE">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Murang'a Sokoni – Marketplace for Murang'a County</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f68b1e">
+  <meta name="description" content="Shop from trusted sellers across Murang’a County. Find fresh farm produce, fashion, electronics, building supplies and local services.">
+  <title>Murang’a Sokoni | Shop Murang’a County</title>
   <link rel="stylesheet" href="css/main.css">
-  <!-- Supabase Library -->
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script defer src="js/auth.js"></script>
+  <script defer src="js/home.js"></script>
 </head>
-<body>
-  <!-- Sticky search bar -->
-  <div class="search-bar">
-    <input type="text" placeholder="Search for products, sellers, or locations in Murang'a...">
-    <select>
-      <option value="">All Categories</option>
-      <option value="food">Food & Farming</option>
-      <option value="clothes">Clothes & Fashion</option>
-      <option value="building">Building Materials</option>
-      <option value="electronics">Electronics</option>
-      <option value="services">Services</option>
-    </select>
-    <select>
-      <option value="">All Locations</option>
-      <option value="kigumo">Kigumo</option>
-      <option value="maragua">Maragua</option>
-      <option value="murangatown">Murang'a Town</option>
-      <option value="gatanga">Gatanga</option>
-      <option value="kandara">Kandara</option>
-    </select>
-    <button id="search-btn" class="search-btn">Search</button>
-  </div>
-
-  <!-- Hero -->
-  <section class="hero">
-    <h1 class="hero-brand">Murang'a Sokoni</h1>
-    <p class="hero-tagline">Marketplace for all buyers and sellers in Murang'a County</p>
-    <a href="register-seller.html" class="btn btn-primary">Join as a Seller</a>
-    <a href="#listings-section" class="btn btn-secondary">Browse Listings</a>
-  </section>
-
-  <!-- Real Listings Section -->
-  <section id="listings-section" class="popular-listings">
-    <h2>Available Listings in Murang'a County</h2>
-    <!-- This container starts EMPTY and will be filled by your database -->
-    <div id="dynamic-listings" class="listings-grid">
-      <p style="text-align: center; grid-column: 1/-1; padding: 2rem; color: #6B7280;">Loading local listings...</p>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <p>© 2026 <strong>Murang'a Sokoni</strong> – Local Marketplace.</p>
-    <p>
-      <a href="index.html">Home</a> |
-      <a href="register-seller.html">Join as Seller</a> |
-      <a href="dashboard.html">Dashboard</a>
-    </p>
-  </footer>
-
-  <!-- DATA FETCHING SCRIPT -->
-  <script>
-    // 1. REPLACE THESE with your actual Supabase URL and Key
-    const SUPABASE_URL = 'https://zesuaxyftsmsnhkzfkkp.supabase.co';
-    const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inplc3VheHlmdHNtc25oa3pma2twIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzczOTUyMDgsImV4cCI6MjA5Mjk3MTIwOH0.9zqxjQy5y68fbwkY0V7UOyWIs07VJf6huO5ov7rygH4';
-    const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
-
-    async function loadListings() {
-      const { data, error } = await supabaseClient
-        .from('listings')
-        .select('*')
-        .order('created_at', { ascending: false }); // Show newest first
-
-      const container = document.getElementById('dynamic-listings');
-
-      if (error) {
-        container.innerHTML = `<p style="color:red; grid-column:1/-1;">Error loading items: ${error.message}</p>`;
-        return;
-      }
-
-      if (data && data.length > 0) {
-        container.innerHTML = ''; // Clear the "Loading..." text
-        data.forEach(item => {
-          container.innerHTML += `
-            <div class="listing-card">
-              <div class="listing-img">
-                ${item.image_url ? 
-                  `<img src="${item.image_url}" style="width:100%; height:100%; object-fit:cover; border-radius:10px 10px 0 0;">` : 
-                  `<div style="display:flex; align-items:center; justify-content:center; height:100%; background:#F3F4F6; color:#9CA3AF;">No Image</div>`
-                }
-              </div>
-              <div class="listing-body">
-                <div class="listing-title">${item.title}</div>
-                <div class="listing-price">KSh ${item.price.toLocaleString()}</div>
-                <div class="listing-location">📍 ${item.location}</div>
-                <div style="font-size: 0.8rem; color: #9CA3AF; margin-top: 0.5rem;">Category: ${item.category}</div>
-              </div>
-            </div>
-          `;
-        });
-      } else {
-        container.innerHTML = '<p style="grid-column:1/-1; text-align:center; padding:3rem;">No listings found. Be the first to post!</p>';
-      }
-    }
-
-    // Run the function when the page loads
-    window.onload = loadListings;
-  </script>
+<body class="marketplace-page">
+  <div class="announcement"><span>Murang’a County’s local marketplace</span><span>Shop near you · Support local businesses</span></div>
+  <header class="site-header">
+    <a class="wordmark" href="index.html" aria-label="Murang’a Sokoni home"><span class="brand-mark" aria-hidden="true">M</span><span>murang’a<span class="wordmark-accent">sokoni</span></span></a>
+    <form id="search-form" class="search-form" role="search">
+      <label class="sr-only" for="search-input">Search products, sellers, or towns</label>
+      <input id="search-input" type="search" placeholder="Search products, sellers and more…" autocomplete="off">
+      <button class="search-button" type="submit"><span aria-hidden="true">⌕</span> Search</button>
+    </form>
+    <nav class="header-actions" aria-label="Account and seller links">
+      <a href="register-seller.html?mode=login"><span class="nav-icon" aria-hidden="true">♙</span><span>Account</span></a>
+      <a href="register-seller.html"><span class="nav-icon" aria-hidden="true">＋</span><span>Sell on Sokoni</span></a>
+    </nav>
+  </header>
+  <nav class="category-nav" aria-label="Shop by category">
+    <a href="#products" data-category="">All products</a>
+    <a href="#products" data-category="food">Fresh produce</a>
+    <a href="#products" data-category="clothes">Fashion</a>
+    <a href="#products" data-category="electronics">Electronics</a>
+    <a href="#products" data-category="building">Home & building</a>
+    <a href="#products" data-category="services">Local services</a>
+  </nav>
+  <main>
+    <section class="market-hero">
+      <div class="hero-copy">
+        <p class="eyebrow">YOUR COUNTY. YOUR SOKO.</p>
+        <h1>Good finds, <span>closer to home.</span></h1>
+        <p>Discover what Murang’a is growing, making and selling — from farm-fresh produce to everyday essentials.</p>
+        <a href="#products" class="hero-cta">Explore the marketplace <span aria-hidden="true">→</span></a>
+        <div class="hero-proof"><span>✓ Local sellers</span><span>✓ County-wide</span><span>✓ Made for Murang’a</span></div>
+      </div>
+      <div class="hero-art" aria-label="Fresh local produce"><span class="produce produce-one" aria-hidden="true">🥑</span><span class="produce produce-two" aria-hidden="true">🍊</span><span class="produce produce-three" aria-hidden="true">🥬</span><span class="hero-art-caption">From our farms<br>to your home.</span></div>
+      <div class="hero-side-note">KIHARA · KANDARA · KIGUMO · KANGEMA · KIHARU · GATANGA · MARAGUA</div>
+    </section>
+    <section class="county-strip" aria-label="Marketplace highlights"><div><span class="strip-icon">📍</span><span><strong>Made for Murang’a</strong><small>Discover sellers across the county</small></span></div><div><span class="strip-icon">🥑</span><span><strong>Shop the harvest</strong><small>Find local farm-fresh produce</small></span></div><div><span class="strip-icon">🤝</span><span><strong>Support local</strong><small>Every purchase backs a local business</small></span></div></section>
+    <section id="products" class="products-section">
+      <div class="section-heading"><div><p class="eyebrow">THE LOCAL FINDS</p><h2>Discover what’s on the soko</h2><p class="section-subtitle">From Murang’a sellers, for Murang’a homes.</p></div><div class="filters"><label class="sr-only" for="category-filter">Filter by category</label><select id="category-filter"><option value="">All categories</option><option value="food">Food & farming</option><option value="clothes">Clothes & fashion</option><option value="building">Building materials</option><option value="electronics">Electronics</option><option value="services">Services</option></select><label class="sr-only" for="location-filter">Filter by location</label><select id="location-filter"><option value="">All Murang’a</option><option value="kigumo">Kigumo</option><option value="maragua">Maragua</option><option value="murangatown">Murang’a Town</option><option value="gatanga">Gatanga</option><option value="kandara">Kandara</option><option value="kiharu">Kiharu</option><option value="kangema">Kangema</option></select></div></div>
+      <p id="listing-message" class="notice" aria-live="polite">Finding the latest local listings…</p>
+      <div id="dynamic-listings" class="product-grid" aria-live="polite"></div>
+    </section>
+    <section class="seller-banner"><div><p class="eyebrow">GOT SOMETHING TO SELL?</p><h2>Your customers are right here.</h2><p>Put your products in front of shoppers across Murang’a County.</p></div><a class="seller-cta" href="register-seller.html">Start selling <span aria-hidden="true">→</span></a></section>
+  </main>
+  <footer class="site-footer"><a class="wordmark footer-wordmark" href="index.html"><span class="brand-mark">M</span><span>murang’a<span class="wordmark-accent">sokoni</span></span></a><p>Local finds. Local people. One Murang’a.</p><p>© 2026 Murang’a Sokoni · <a href="register-seller.html">Join as a seller</a> · <a href="dashboard.html">Seller dashboard</a></p></footer>
 </body>
 </html>
